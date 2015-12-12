@@ -14,6 +14,7 @@ DocumentPrototype.generate = function (replace) {
 function showDocument(text) {
     'use strict';
     document.querySelector('#content').style.display = 'none';
+    document.querySelector('#main_logo').style.display = 'none';
     document.querySelector('#pismo').innerHTML = text;
 }
 
@@ -27,7 +28,7 @@ function boot() {
         selectedDocument;
 
     configSelect = document.querySelector('#documentTypes');
-    documentTypes.push(new Kempa());
+    documentTypes.push(new Kepa());
 
     for (i = 0; i < documentTypes.length; i += 1) {
         options += '<option value="' + i + '">' + documentTypes[i].title + '</option>';
