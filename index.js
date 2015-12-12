@@ -3,9 +3,9 @@ function DocumentPrototype( title, html ) {
     this.html = html || '<h2>Tutaj będzie geenrowany do druku dokument. Trzeba dorobić templatkowanie</h2>';
 }
 
-DocumentPrototype.generate = function () {
-    //TODO: templatkowanie
-    return this.html;
+DocumentPrototype.generate = function ( replace ) {
+    var result = this.html;
+    return result.replace( '<%what%>', replace.what ).replace( '<%reason%>', replace.reason );
 }
 
 
@@ -18,7 +18,6 @@ function boot() {
     configSelect = document.querySelector( '#documentTypes' );
     documentTypes.push( new Kempa() );
 
-window.d = documentTypes;
     for (var i = 0; i < documentTypes.length; i++) {
         options += '<option value="' + i + '">' + documentTypes[i].title + '</option>';
     }
@@ -34,7 +33,10 @@ window.d = documentTypes;
     } );
 
     document.querySelector( '#action' ).addEventListener( 'click', function( event ) {
-        showDocument( selectedDocument.generate() );
+        showDocument( selectedDocument.generate( {
+            what: document.querySelector( '#what' ).value,
+            reason: document.querySelector( '#reason' ).value
+        } ) );
     });
 
 }
