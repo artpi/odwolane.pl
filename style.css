@@ -1,0 +1,35 @@
+#content {
+    background-color: #F1E3E4;
+    color:#1C1D21;
+    font-family: 'Alegreya Sans', sans-serif;
+    margin: 100px auto;
+    padding: 20px;
+    width: 30%;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+
+#content h2 {
+    margin-top: 50px;
+}
+
+#content input,
+#content select{
+    display: block;
+    margin: 3px auto 20px auto;
+    width: 100%;
+}
+
+#content label {
+    display: block;
+}
+
+#content button {
+    display: block;
+    margin:40px auto;
+}

@@ -1,5 +1,5 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="pl">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src='index.js'></script>
@@ -7,29 +7,26 @@
     <script>
         document.addEventListener("DOMContentLoaded", boot );
     </script>
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Allura&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
 <div id='content'>
     <h1>Co chcesz skasować?</h1>
-
-    <select id='documentTypes'>    
+    <select id='documentTypes'>
         <option value='-1'>Wybierz proszę co chcesz skasować</option>
     </select>
 
     <h2>Wypełnij proszę szczegóły:</h2>
     <div id='config'>
-        <div><label for='what'>Chcę skasować<input type='text' id='what'></label></div>
-        <div><label for='reason'>Ponieważ<input type='text' id='reason'></label></div>
-
+        <div><label for='to_whom'>Adresat pisma:<input type='text' id='to_whom' placeholder="Pan/Pani..."></label></div>
+        <div><label for='what'>W sprawie:<input type='text' id='what'></label></div>
     </div>
-
     <button id='action'>SKASUJ TO!</button>
-
 </div>
-
+<div id='pismo'></div>
 </body>
-
-
 </html>
