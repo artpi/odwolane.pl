@@ -1,53 +1,32 @@
-function DocumentPrototype(title, html) {
-    'use strict';
-    this.title = title || 'Dowolne pismo';
-    this.html = html || '<h2>Tutaj będzie geenrowany do druku dokument. Trzeba dorobić templatkowanie</h2>';
-}
-
-DocumentPrototype.generate = function (replace) {
-    'use strict';
-    var result = this.html;
-    return result.replace(/<%what%>/g, replace.what).replace(/<%to_whom%>/g, replace.to_whom);
-};
 
 
-function showDocument(text) {
-    'use strict';
-    document.querySelector('#content').style.display = 'none';
-    document.querySelector('#main_logo').style.display = 'none';
-    document.querySelector('#pismo').innerHTML = text;
-}
-
-
-function boot() {
-    'use strict';
-    var i,
-        documentTypes = [],
-        options = '',
-        configSelect,
-        selectedDocument;
-
-    configSelect = document.querySelector('#documentTypes');
-    documentTypes.push(new Kepa());
-
-    for (i = 0; i < documentTypes.length; i += 1) {
-        options += '<option value="' + i + '">' + documentTypes[i].title + '</option>';
+function template( str, data ) {
+    for( key in data ) {
+        str = str.replace( new RegExp( '{' + key + '}', 'g' ), data[key] );
     }
+    return str;
+}
 
-    configSelect.innerHTML += options;
-    configSelect.addEventListener('change', function (event) {
-        var index = event.target.selectedOptions[0].value;
-        // TODO: dodawanie szczegolow
-        selectedDocument = documentTypes[index];
+function getPayload() {
+    return JSON.parse( atob( document.location.hash.substring( 1 ) ) );
+}
+
+function form() {
+    'use strict';
+    var selectedDocument;
+
+    document.querySelector('#documentTypes').addEventListener('change', function (event) {
+        selectedDocument = event.target.selectedOptions[0].value;
     });
 
     document.querySelector('#action').addEventListener('click', function () {
-        showDocument(selectedDocument.generate({
-            what: document.querySelector('#what').value || '..........................................',
+        var payload = {
+            what: document.querySelector('#what').value,
             to_whom: document.querySelector('#to_whom').value
-        }));
+        };
+        
+        document.location.href = 'pisma/' + selectedDocument + '/#' + btoa( JSON.stringify( payload ) );
     });
 
 }
-
 
