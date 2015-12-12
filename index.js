@@ -7,7 +7,7 @@ function DocumentPrototype(title, html) {
 DocumentPrototype.generate = function (replace) {
     'use strict';
     var result = this.html;
-    return result.replace('<%what%>', replace.what).replace('<%to_whom%>', replace.to_whom);
+    return result.replace(/<%what%>/g, replace.what).replace(/<%to_whom%>/g, replace.to_whom);
 };
 
 
