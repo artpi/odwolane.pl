@@ -2,7 +2,7 @@
 
 function template( str, data ) {
     for( key in data ) {
-        str = str.replace( new RegExp( '{' + key + '}', 'g' ), data[key] );
+        str = str.replace( new RegExp( '{' + key + '}', 'g' ), unescape( data[key] ) );
     }
     return str;
 }
@@ -22,8 +22,8 @@ function form() {
     document.querySelector('form').addEventListener('submit', function (event) {
         event.preventDefault();
         var payload = {
-            what: document.querySelector('#what').value,
-            to_whom: document.querySelector('#to_whom').value
+            what: escape( document.querySelector('#what').value ),
+            to_whom: escape( document.querySelector('#to_whom').value )
         };
         
         document.location.href = 'pisma/' + selectedDocument + '/#' + btoa( JSON.stringify( payload ) );
