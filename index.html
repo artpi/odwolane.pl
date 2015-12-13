@@ -7,7 +7,6 @@
         document.addEventListener("DOMContentLoaded", form );
     </script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -16,9 +15,11 @@
 <div class="row" style=''>
 <div class='col-md-3 col-sm-1'></div>
   <div class="col-md-6 col-sm-10">
-
-<div class="jumbotron" style='padding:20px;border-left: 4px solid ##d9534f'>
-  <h2>Odwołaj to!</h2>
+  <div class=row style='text-align:center;padding:30px'>
+    <img src = 'pisma/kepa/orzelek.png' width="200">
+  </div>
+<div class="jumbotron" style='padding:20px;border-left: 4px solid #d9534f'>
+  <h2 style='text-align:center'>Odwołane!</h2>
   
 <p>Chcesz odwołać klasówkę, wycieczkę szkolną, wyciągnąć kolegę z więzienia lub nie podoba Ci się orzeczenie Trybunału Konstytucyjnego?</p>
 <p>Skorzystaj z naszego generatora!</p>
@@ -47,23 +48,14 @@
         <label for="what">W sprawie...</label>
         <input type="text" class="form-control" id="what" placeholder="">
       </div>
-      <button type="submit" class="btn btn-default">Odwołaj to!</button>
+      <div class="row" style='text-align:center;margin-bottom:30px'>
+      <button type="submit" class="btn btn-danger btn-lg">Odwołaj to!</button>
+      </div>
     </form>
 
   </div>
   <div class='col-md-3 col-sm-1'></div>
 </div>
 
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-220058-13', 'auto');
-  ga('send', 'pageview');
-
-</script>
 </body>
 </html>
