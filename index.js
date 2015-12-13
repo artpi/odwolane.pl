@@ -13,7 +13,7 @@ function getPayload() {
 
 function form() {
     'use strict';
-    var selectedDocument;
+    var selectedDocument = 'kepa';
 
     document.querySelector('#documentTypes').addEventListener('change', function (event) {
         selectedDocument = event.target.selectedOptions[0].value;
