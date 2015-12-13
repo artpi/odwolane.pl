@@ -19,7 +19,8 @@ function form() {
         selectedDocument = event.target.selectedOptions[0].value;
     });
 
-    document.querySelector('#action').addEventListener('click', function () {
+    document.querySelector('form').addEventListener('submit', function (event) {
+        event.preventDefault();
         var payload = {
             what: document.querySelector('#what').value,
             to_whom: document.querySelector('#to_whom').value
