@@ -1,5 +1,6 @@
-# Odwolane.pl
+![Logo](./share.png)
 
+# Odwolane.pl
 Chcesz odwołać klasówkę, wycieczkę szkolną, wyciągnąć kolegę z więzienia lub nie podoba Ci się orzeczenie Trybunału Konstytucyjnego?
 Skorzystaj z naszego generatora [Odwolane.pl](http://odwolane.pl).
 Generujemy szybkie i bezproblemowe odwolania wszystkiego i wszystkich!
